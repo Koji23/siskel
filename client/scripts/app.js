@@ -64,6 +64,8 @@ var MovieView = Backbone.View.extend({
 
   initialize: function() {
     // your code here
+    this.render();
+
   },
 
   events: {
@@ -71,7 +73,7 @@ var MovieView = Backbone.View.extend({
   },
 
   handleClick: function() {
-    // your code here
+    this.model.toggleLike();
   },
 
   render: function() {
@@ -85,6 +87,7 @@ var MoviesView = Backbone.View.extend({
 
   initialize: function() {
     // your code here
+    this.render();
   },
 
   render: function() {
