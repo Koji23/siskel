@@ -34,12 +34,14 @@ var Movies = Backbone.Collection.extend({
 var AppView = Backbone.View.extend({
 
   events: {
-    'click form input': 'handleClick'
+    'click form input': 'handleClick',
+    //'change': 'render'
   },
 
   handleClick: function(e) {
     var field = $(e.target).val();
     this.collection.sortByField(field);
+    this.render();
   },
 
   render: function() {
@@ -74,6 +76,8 @@ var MovieView = Backbone.View.extend({
 
   handleClick: function() {
     this.model.toggleLike();
+    this.render();
+   
   },
 
   render: function() {
